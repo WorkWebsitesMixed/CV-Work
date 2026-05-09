@@ -14,10 +14,12 @@ body {
 }
 
 h1 {
-  margin: 50px auto 0 auto;
-  font-family: 'Sacramento', cursive;
-  font-size: 5rem;
-  color: #66BFBF;
+  margin: 30px auto 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 h2 {
@@ -66,18 +68,69 @@ strong {
   padding: 30px 0;
 }
 
-.bottomCloud {
-  position: absolute;
-  right: 750px;
-  bottom: 300px;
-}
-
 .subtitle {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   color: #40514E;
   margin: 10px 0;
   font-weight: 300;
+}
+
+.topContainer .subtitle {
+  color: #8bbfbf;
+}
+
+/* Technical header */
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-h2 {
+  color: #66BFBF;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.header-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: rgba(102, 191, 191, 0.12);
+  border: 1px solid rgba(102, 191, 191, 0.4);
+  color: #66BFBF;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Font Awesome skill icons */
+.skill-icon-left {
+  font-size: 5rem;
+  float: left;
+  margin-right: 30px;
+  color: #66BFBF;
+  width: 100px;
+  text-align: center;
+  line-height: 1;
+}
+
+.skill-icon-right {
+  font-size: 5rem;
+  float: right;
+  margin-left: 30px;
+  color: #66BFBF;
+  width: 100px;
+  text-align: center;
+  line-height: 1;
 }
 
 .contactMeParagraph {
@@ -188,7 +241,8 @@ strong {
 }
 
 .project-highlight,
-.achievement-highlight {
+.achievement-highlight,
+.supervision-highlight {
   background-color: rgba(17, 153, 158, 0.03);
   padding: 20px;
   border-radius: 10px;
@@ -196,8 +250,25 @@ strong {
 }
 
 .project-highlight:hover,
-.achievement-highlight:hover {
+.achievement-highlight:hover,
+.supervision-highlight:hover {
   background-color: rgba(17, 153, 158, 0.08);
+}
+
+/* Subsection separator within a section */
+.subsection-header {
+  width: 60%;
+  margin: 60px auto 0;
+  padding-top: 40px;
+  border-top: 2px dotted rgba(102, 191, 191, 0.35);
+  text-align: left;
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  color: #66BFBF;
+  font-weight: 500;
+  margin: 0 0 10px 0;
 }
 
 /* Footer */
@@ -241,6 +312,9 @@ strong {
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
 .profileImage:hover {
@@ -268,15 +342,14 @@ strong {
 }
 
 .topContainer {
-  background-color: #EAF6F6;
+  background: linear-gradient(135deg, #0d1f25 0%, #0a2a2a 100%);
   position: relative;
-  padding-top: 100px;
+  padding: 80px 20px 60px;
 }
 
-.topCloud {
-  position: absolute;
-  right: 300px;
-  top: 50px;
+.topCloud,
+.bottomCloud {
+  display: none;
 }
 
 /***************Buttons*****************/
@@ -342,42 +415,28 @@ strong {
 
 /***********RESPONSIVE DESIGN*************/
 @media (max-width: 1200px) {
-  .topCloud {
-    right: 200px;
-  }
-
-  .bottomCloud {
-    right: 500px;
-  }
-
   .introductionParagraph,
   .contactMeParagraph {
     width: 60%;
   }
 
-  .skill-row {
+  .skill-row,
+  .subsection-header {
     width: 70%;
   }
 }
 
 @media (max-width: 900px) {
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   h2 {
     font-size: 2rem;
   }
 
-  .topCloud {
-    right: 100px;
-  }
-
-  .bottomCloud {
-    right: 300px;
-  }
-
-  .skill-row {
+  .skill-row,
+  .subsection-header {
     width: 80%;
   }
 
@@ -393,8 +452,8 @@ strong {
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 3rem;
-    margin: 30px auto 0 auto;
+    font-size: 2.2rem;
+    margin: 20px auto 0 auto;
   }
 
   h2 {
@@ -409,24 +468,18 @@ strong {
     font-size: 1rem;
   }
 
-  .topCloud,
-  .bottomCloud {
-    width: 80px;
+  .header-h2 {
+    font-size: 1.1rem;
   }
 
-  .topCloud {
-    right: 20px;
-    top: 30px;
-  }
-
-  .bottomCloud {
-    right: 20px;
-    bottom: 200px;
-  }
-
-  .skill-row {
+  .skill-row,
+  .subsection-header {
     width: 90%;
     margin: 50px auto;
+  }
+
+  .subsection-header {
+    margin-bottom: 0;
   }
 
   .skill-one-image,
@@ -435,6 +488,15 @@ strong {
     float: none;
     margin: 20px auto;
     display: block;
+  }
+
+  .skill-icon-left,
+  .skill-icon-right {
+    font-size: 3.5rem;
+    float: none;
+    margin: 15px auto;
+    display: block;
+    width: 100%;
   }
 
   .introductionParagraph,
@@ -501,23 +563,32 @@ strong {
 /***********PRINT STYLES*************/
 @media print {
 
-  .topCloud,
-  .bottomCloud {
-    display: none;
-  }
-
   body {
     background-color: white;
   }
 
   .topContainer {
-    background-color: white;
-    padding-top: 20px;
+    background: white !important;
+    padding: 20px;
   }
 
   h1 {
     color: #2c3e50;
     font-size: 3rem;
+  }
+
+  .header-h2 {
+    color: #2c3e50;
+  }
+
+  .tag {
+    border-color: #2c3e50;
+    color: #2c3e50;
+  }
+
+  .skill-icon-left,
+  .skill-icon-right {
+    color: #2c3e50;
   }
 
   h2 {
